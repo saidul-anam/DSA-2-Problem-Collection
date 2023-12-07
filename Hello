@@ -1,1 +1,7 @@
 This repo will have problem and solution on different topic in mst .
+```
+#include<bits/stdc++.h>
+int main(){
+int x;
+cin>>x;
+} ```
