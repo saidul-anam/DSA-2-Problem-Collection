@@ -14,7 +14,7 @@ Since the Civil Engineer is clever enough and tries to make some profit, he made
 Now you are given the task to check whether the Civil Engineer is evil or not. That's why you want to calculate the average before he reports to the Govt.
 
 Original Problem Link : https://lightoj.com/problem/civil-and-evil-engineer<br>
-1).Solution 
+# Solution 
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
