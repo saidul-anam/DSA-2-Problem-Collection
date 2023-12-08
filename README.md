@@ -2,7 +2,7 @@
 
 # Contents
 
-## [Minimum Spanning Tree](#Problem1,Problem2,Problem3)
+## [Minimum Spanning Tree](#Problem1,Problem2,Problem3,Problem4)
 ## [Single Source Shortest Path](#Problems)
 
 # Minimum Spanning Tree
@@ -14,7 +14,8 @@ Since the Civil Engineer is clever enough and tries to make some profit, he made
 Now you are given the task to check whether the Civil Engineer is evil or not. That's why you want to calculate the average before he reports to the Govt.
 
 Original Problem Link : https://lightoj.com/problem/civil-and-evil-engineer<br>
-# Solution 
+
+Solution<br> 
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -154,7 +155,8 @@ If both the jth integer of ithline and the ith integer of jth line are greater t
 You are not to rearrange any cables in your house; you are only to remove unnecessary ones. Return the maximum total length of cables (in meters) that you can donate. If any pair of rooms is not initially connected by some path, return -1.
 
 Original Problem Link :https://lightoj.com/problem/donation
-# Solution
+
+ Solution<br>
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -258,7 +260,8 @@ A location is considered to have access to an airport either if it contains an a
 You are given the cost of building an airport and a list of possible roads between pairs of locations and their corresponding costs. The government now needs your help to decide on the cheapest way of ensuring that every location has access to an airport. The aim is to make airport access as easy as possible, so if there are several ways of getting the minimal cost, choose the one that has the most airports.
 
 Original source:https://lightoj.com/problem/air-ports
-# Solutions 
+
+Solutions<br>
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -344,7 +347,7 @@ int main(){
  }
 }
 ```
-# Problem
+# Problem4
 >4)Given a set of houses, each with the option of having an independent gas supply incurring a
 cost 'gas_supply[i]' or connecting to other houses through bidirectional pipelines with associated
 costs 'pipelines[i] = [house1, house2, cost]'. The objective is to minimize the total cost of
@@ -368,10 +371,106 @@ total cost of ensuring gas supply to all house
 Example<br>
 | Input | Output|
 |--|--|
-|4 2   
+|4 2   |8|
 1 4 4 4
 1 4 2
-1 2 1  |8|
+1 2 1  
+
+Solution<br>
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+vector<int>arr5(1000,-1);
+class unionfined{
+int *parent;
+int *Rank;
+public:
+unionfined(int i){
+    parent=new int[i+1];
+    Rank=new int[i+1];
+    for(int j=1;j<=i;j++){
+        parent[j]=j;
+        Rank[j]=0;
+    }
+    }
+    int Findparent(int i){
+if(parent[i]==i){
+    return i;
+}
+else return parent[i]=Findparent(parent[i]);
+}
+void unionset(int u,int v){
+u=Findparent(u);
+v=Findparent(v);
+if(Rank[u]<Rank[v]){
+    parent[u]=v;
+}
+else if(Rank[v]<Rank[u]) {
+    parent[v]=u;
+}
+else{
+    parent[v]=u;
+    Rank[u]++;
+}
+}
+};
+class mst{
+int minweight;
+int k;
+public:
+    mst(int i){
+        k=i;
+            }
+void getmst(vector<vector<int>>arr1){
+    vector<vector<int>>arr=arr1;
+    sort(arr.begin(),arr.end());
+    minweight=0;
+    unionfined x(k);
+for(int i=0;i<arr.size();i++){
+        int start=x.Findparent(arr[i][1]);
+        int finish=x.Findparent(arr[i][2]);
+     if(start!=finish){
+            minweight+=arr[i][0];
+        x.unionset(start,finish);
+     }}
+   set<int>component;
+for(int i=1;i<=k;i++){
+component.insert(x.Findparent(i));}
+for(int i=0;i<component.size();i++){
+        int host=INT_MAX;
+for(int j=1;j<=k;j++){
+    if(x.Findparent(j)==*next(component.begin(),i)){
+        if(host>arr5[j]){
+        host=arr5[j];
+        }
+    }
+}
+minweight+=host;
+}
+cout<<minweight<<endl;
+}
+};
+void solve(){
+ int n,x;
+ cin>>n>>x;
+ for(int i=1;i<n+1;i++){
+    cin>>arr5[i];
+ }
+ vector<vector<int>>arr;
+ for(int i=0;i<x;i++){
+        int a,b,c;
+ cin>>a>>b>>c;
+ if(c>arr5[a]&&arr5[b]<c) {}
+ else arr.push_back({c,a,b});
+    }
+    mst ab(n);
+ ab.getmst(arr);
+}
+int main(){
+    solve();
+}
+
+```
 # Single Source Shortest Path
 
 # Problems
