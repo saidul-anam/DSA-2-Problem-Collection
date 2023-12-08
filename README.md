@@ -344,7 +344,34 @@ int main(){
  }
 }
 ```
+# Problem
+>4)Given a set of houses, each with the option of having an independent gas supply incurring a
+cost 'gas_supply[i]' or connecting to other houses through bidirectional pipelines with associated
+costs 'pipelines[i] = [house1, house2, cost]'. The objective is to minimize the total cost of
+ensuring gas supply to all houses, considering both independent gas supplies and pipeline
+connections. In other words, we want to find the most cost-effective way to provide gas to all
+houses, allowing for a mix of individual gas supplies and interconnected pipelines.
 
+Input <br>
+The first input line contains two integers, n and m, representing the number of houses and the
+number of bidirectional pipelines. Following that, there is an array gas_supply of length n, where
+gas_supply[i] represents the cost of providing independent gas supply to the ith house. The
+values should be space-separated. The next m lines each contain three space-separated
+integers: house1, house2, and cost (1 <= house1, house2 <= n, 1 <= cost <= 1000). These
+values represent the cost of connecting house1 and house2 with a bidirectional pipeline of cost
+'cost'
+
+Output<br>
+Your program should print a single integer to the standard output, representing the minimum
+total cost of ensuring gas supply to all house
+
+Example<br>
+| Input | Output|
+|--|--|
+|4 2   |8|
+1 4 4 4
+1 4 2
+1 2 1
 # Single Source Shortest Path
 
 # Problems
