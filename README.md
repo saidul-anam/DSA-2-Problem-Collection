@@ -354,7 +354,7 @@ int main(){
  }
 }
 ```
-        </details>
+</details>
             
 # Problem4
 >4)Given a set of houses, each with the option of having an independent gas supply incurring a
