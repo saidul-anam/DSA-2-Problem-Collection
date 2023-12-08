@@ -2,12 +2,12 @@
 
 # Contents
 
-## [Minimum Spanning Tree](#Problems)
+## [Minimum Spanning Tree](#Problem1,Problem2,Problem3)
 ## [Single Source Shortest Path](#Problems)
 
 # Minimum Spanning Tree
 
-# Problems
+# Problem1
 
 >1) A Civil Engineer is given a task to connect n houses with the main electric power station directly or indirectly. The Govt has given him permission to connect exactly n wires to connect all of them. Each of the wires connects either two houses, or a house and the power station. The costs for connecting each of the wires are given.
 Since the Civil Engineer is clever enough and tries to make some profit, he made a plan. His plan is to find the best possible connection scheme and the worst possible connection scheme. Then he will report the average of the costs.
@@ -147,7 +147,7 @@ int main(){
  }
 }
 ```
-# Problems
+# Problem2
 >2)A local charity is trying to gather donations of Ethernet cable. You realize that you probably have a lot of extra cable in your house, and make the decision that you will donate as much cable as you can spare.
 You will be given the lengths (in meters) of cables between each pair of rooms in your house. You wish to keep only enough cable so that every pair of rooms in your house is connected by some chain of cables, of any length. The lengths are given in n lines, each having n integers, where n is the number of rooms in your house. The jthinteger of ith line gives the length of the cable between rooms i and j in your house.
 If both the jth integer of ithline and the ith integer of jth line are greater than 0, this means that you have two cables connecting rooms iand j, and you can certainly donate at least one of them. If the ithinteger of ith line is greater than 0, this indicates unused cable in room i, which you can donate without affecting your home network in any way. 0 means no cable.
@@ -251,7 +251,7 @@ int main(){
  }
 }
 ```
-# Problems
+# Problem3
 >3)The government of a certain developing nation wants to improve transportation in one of its most inaccessible areas, in an attempt to attract investment. The region consists of several important locations that must have access to an airport.
 Of course, one option is to build an airport in each of these places, but it may turn out to be cheaper to build fewer airports and have roads link them to all of the other locations. Since these are long distance roads connecting major locations in the country (e.g. cities, large villages, industrial areas), all roads are two-way. Also, there may be more than one direct road possible between two areas. This is because there may be several ways to link two areas (e.g. one road tunnels through a mountain while the other goes around it etc.) with possibly differing costs.
 A location is considered to have access to an airport either if it contains an airport or if it is possible to travel by road to another location from there that has an airport.
