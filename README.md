@@ -485,7 +485,6 @@ int main(){
 }
 ```
 </details>
-
      </details>
      
 # Single Source Shortest Path
