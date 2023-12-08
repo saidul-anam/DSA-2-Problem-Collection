@@ -147,6 +147,7 @@ int main(){
  }
 }
 ```
+# Problems
 >2)A local charity is trying to gather donations of Ethernet cable. You realize that you probably have a lot of extra cable in your house, and make the decision that you will donate as much cable as you can spare.
 You will be given the lengths (in meters) of cables between each pair of rooms in your house. You wish to keep only enough cable so that every pair of rooms in your house is connected by some chain of cables, of any length. The lengths are given in n lines, each having n integers, where n is the number of rooms in your house. The jthinteger of ith line gives the length of the cable between rooms i and j in your house.
 If both the jth integer of ithline and the ith integer of jth line are greater than 0, this means that you have two cables connecting rooms iand j, and you can certainly donate at least one of them. If the ithinteger of ith line is greater than 0, this indicates unused cable in room i, which you can donate without affecting your home network in any way. 0 means no cable.
