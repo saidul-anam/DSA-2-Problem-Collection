@@ -368,10 +368,10 @@ total cost of ensuring gas supply to all house
 Example<br>
 | Input | Output|
 |--|--|
-|4 2   |8|
+|4 2   
 1 4 4 4
 1 4 2
-1 2 1
+1 2 1  |8|
 # Single Source Shortest Path
 
 # Problems
