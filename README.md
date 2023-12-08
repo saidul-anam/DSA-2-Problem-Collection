@@ -269,6 +269,7 @@ Original source:https://lightoj.com/problem/air-ports
 
 <details>
 <summary>Solution</summary>
+    
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -387,6 +388,7 @@ Example<br>
 
 <details>
 <summary>Solution</summary>
+    
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
