@@ -14,8 +14,9 @@ Since the Civil Engineer is clever enough and tries to make some profit, he made
 Now you are given the task to check whether the Civil Engineer is evil or not. That's why you want to calculate the average before he reports to the Govt.
 
 Original Problem Link : https://lightoj.com/problem/civil-and-evil-engineer<br>
-
-Solution<br> 
+<details>
+<summary>Solution</summary>
+    
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -111,7 +112,6 @@ for(int i=0;i<=k;i++){
 return highweight;
 }
 };
-
 void solve(){
  int x;
  cin>>x;
@@ -148,6 +148,7 @@ int main(){
  }
 }
 ```
+</details>
 # Problem2
 >2)A local charity is trying to gather donations of Ethernet cable. You realize that you probably have a lot of extra cable in your house, and make the decision that you will donate as much cable as you can spare.
 You will be given the lengths (in meters) of cables between each pair of rooms in your house. You wish to keep only enough cable so that every pair of rooms in your house is connected by some chain of cables, of any length. The lengths are given in n lines, each having n integers, where n is the number of rooms in your house. The jthinteger of ith line gives the length of the cable between rooms i and j in your house.
