@@ -9,14 +9,9 @@
 
 # Problems
 
->a.The kingdom of Olympia consists of N cities and M bidirectional roads. Each road connects exactly two cities and two cities can be connected with more than one road. Also it possible that some roads connect city with itself making a loop.All roads are constantly plundered with bandits. After a while bandits became bored of wasting time in road robberies, so they suggested the king of Olympia to pay off. According to the offer, bandits want to get a gift consisted of gold and silver coins. Offer also contains a list of restrictions: for each road it is known gi — the smallest amount of gold and si — the smallest amount of silver coins that should be in the gift to stop robberies on the road. That is, if the gift contains a gold and b silver coins, then bandits will stop robberies on all the roads that gi ≤ a and si ≤ b.Unfortunately kingdom treasury doesn't contain neither gold nor silver coins, but there are Olympian tugriks in it. The cost of one gold coin in tugriks is G, and the cost of one silver coin in tugriks is S. King really wants to send bandits such gift that for any two cities there will exist a safe path between them. Your task is to find the minimal cost in Olympian tugriks of the required gift.
-
-Input<br>
-The first line of the input contains two integers N and M (2 ≤ N ≤ 200, 1 ≤ M ≤ 50 000) — the number of cities and the number of roads, respectively. The second line contains two integers G and S (1 ≤ G, S ≤ 109) — the prices of gold and silver coins in tugriks. The following M lines contain information about the offer. Each of the records in list is given as four integers xi, yi, gi, si, where xi and yi are the numbers of cities that the road connects and gi, si are minimal gold and silver coins requirements for the i-th road (1 ≤ xi, yi ≤ N, 1 ≤ gi, si ≤ 109). Cities are numbered from 1 to N. It is possible that there are more than one road between a pair of cities. It is possible that a road connects the city with itself.<br>
-
-Output<br>
-The output should contain the minimal cost of the gift in Olympian tugriks. If there is no gift that satisfies the given requirements output .
-Original Source: https://codeforces.com/contest/76/problem/A
+>a A Civil Engineer is given a task to connect n houses with the main electric power station directly or indirectly. The Govt has given him permission to connect exactly n wires to connect all of them. Each of the wires connects either two houses, or a house and the power station. The costs for connecting each of the wires are given.
+Since the Civil Engineer is clever enough and tries to make some profit, he made a plan. His plan is to find the best possible connection scheme and the worst possible connection scheme. Then he will report the average of the costs.
+Now you are given the task to check whether the Civil Engineer is evil or not. That's why you want to calculate the average before he reports to the Govt.
 
 
 # Single Source Shortest Path
