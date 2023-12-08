@@ -251,7 +251,99 @@ int main(){
  }
 }
 ```
+# Problems
+>3)The government of a certain developing nation wants to improve transportation in one of its most inaccessible areas, in an attempt to attract investment. The region consists of several important locations that must have access to an airport.
+Of course, one option is to build an airport in each of these places, but it may turn out to be cheaper to build fewer airports and have roads link them to all of the other locations. Since these are long distance roads connecting major locations in the country (e.g. cities, large villages, industrial areas), all roads are two-way. Also, there may be more than one direct road possible between two areas. This is because there may be several ways to link two areas (e.g. one road tunnels through a mountain while the other goes around it etc.) with possibly differing costs.
+A location is considered to have access to an airport either if it contains an airport or if it is possible to travel by road to another location from there that has an airport.
+You are given the cost of building an airport and a list of possible roads between pairs of locations and their corresponding costs. The government now needs your help to decide on the cheapest way of ensuring that every location has access to an airport. The aim is to make airport access as easy as possible, so if there are several ways of getting the minimal cost, choose the one that has the most airports.
 
+Original source:https://lightoj.com/problem/air-ports
+# Solutions 
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+class unionfined{
+int *parent;
+int *Rank;
+public:
+unionfined(int i){
+    parent=new int[i];
+    Rank=new int[i];
+    for(int j=1;j<=i;j++){
+        parent[j]=j;
+        Rank[j]=0;
+    }
+    }
+    int Findparent(int i){
+if(parent[i]==i){
+    return i;
+}
+else return parent[i]=Findparent(parent[i]);
+}
+void unionset(int u,int v){
+u=Findparent(u);
+v=Findparent(v);
+if(Rank[u]<Rank[v]){
+    parent[u]=v;
+}
+else if(Rank[v]<Rank[u]) {
+    parent[v]=u;
+}
+else{
+    parent[v]=u;
+    Rank[u]++;
+}
+}
+};
+class mst{
+int minweight;
+int k;
+public:
+    mst(int i){
+        k=i;
+            }
+void getmst(vector<vector<int>>arr1,int y){
+    vector<vector<int>>arr=arr1;
+    sort(arr.begin(),arr.end());
+    minweight=0;
+    unionfined x(k);
+for(int i=0;i<arr.size();i++){
+        int start=x.Findparent(arr[i][1]);
+        int finish=x.Findparent(arr[i][2]);
+     if(start!=finish){
+            minweight+=arr[i][0];
+        x.unionset(start,finish);
+     }}
+   set<int>component;
+for(int i=1;i<=k;i++){
+component.insert(x.Findparent(i));
+}
+cout<<minweight+(component.size()*y)<<" "<<component.size()<<endl;
+}
+};
+void solve(){
+ int n,x,y;
+ cin>>n>>x>>y;
+ vector<vector<int>>arr;
+ for(int i=0;i<x;i++){
+        int a,b,c;
+ cin>>a>>b>>c;
+ if(c<y) arr.push_back({c,a,b});
+    }
+    mst ab(n);
+ ab.getmst(arr,y);
+}
+int main(){
+ int n;
+ cin>>n;
+ int i=1;
+ while(n--){
+        cout<<"Case "<<i<<": ";
+        i++;
+    solve();
+ }
+}
+```
 
 # Single Source Shortest Path
 
