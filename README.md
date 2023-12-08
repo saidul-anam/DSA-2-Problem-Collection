@@ -2,7 +2,7 @@
 
 # Contents
 
-## [Minimum Spanning Tree](# Problem1(#Solution),Problem2(#Solution),Problem3(#Solution))
+## [Minimum Spanning Tree](#Problem1,Problem2,Problem3)
 ## [Single Source Shortest Path](#Problems)
 
 # Minimum Spanning Tree
