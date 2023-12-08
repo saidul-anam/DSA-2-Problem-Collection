@@ -149,6 +149,7 @@ int main(){
 }
 ```
 </details>
+
 # Problem2
 >2)A local charity is trying to gather donations of Ethernet cable. You realize that you probably have a lot of extra cable in your house, and make the decision that you will donate as much cable as you can spare.
 You will be given the lengths (in meters) of cables between each pair of rooms in your house. You wish to keep only enough cable so that every pair of rooms in your house is connected by some chain of cables, of any length. The lengths are given in n lines, each having n integers, where n is the number of rooms in your house. The jthinteger of ith line gives the length of the cable between rooms i and j in your house.
@@ -157,7 +158,9 @@ You are not to rearrange any cables in your house; you are only to remove unnece
 
 Original Problem Link :https://lightoj.com/problem/donation
 
- Solution<br>
+ <details>
+<summary>Solution</summary>
+     
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -254,6 +257,8 @@ int main(){
  }
 }
 ```
+</details>
+
 # Problem3
 >3)The government of a certain developing nation wants to improve transportation in one of its most inaccessible areas, in an attempt to attract investment. The region consists of several important locations that must have access to an airport.
 Of course, one option is to build an airport in each of these places, but it may turn out to be cheaper to build fewer airports and have roads link them to all of the other locations. Since these are long distance roads connecting major locations in the country (e.g. cities, large villages, industrial areas), all roads are two-way. Also, there may be more than one direct road possible between two areas. This is because there may be several ways to link two areas (e.g. one road tunnels through a mountain while the other goes around it etc.) with possibly differing costs.
@@ -262,7 +267,8 @@ You are given the cost of building an airport and a list of possible roads betwe
 
 Original source:https://lightoj.com/problem/air-ports
 
-Solutions<br>
+<details>
+<summary>Solution</summary>
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -348,6 +354,8 @@ int main(){
  }
 }
 ```
+        </details>
+            
 # Problem4
 >4)Given a set of houses, each with the option of having an independent gas supply incurring a
 cost 'gas_supply[i]' or connecting to other houses through bidirectional pipelines with associated
@@ -377,7 +385,8 @@ Example<br>
 1 4 2
 1 2 1  
 
-Solution<br>
+<details>
+<summary>Solution</summary>
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -470,8 +479,9 @@ void solve(){
 int main(){
     solve();
 }
-
 ```
+</details>
+     
 # Single Source Shortest Path
 
 # Problems
