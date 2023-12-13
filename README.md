@@ -486,7 +486,145 @@ int main(){
 ```
 </details>
      </details>
-     
+
+# Problem5
+
+>5)Your job is to establish an efficient water supply network for every residence within a
+city. Let us conceptualize this city as a 2D plane, where each house is positioned using
+coordinates. You are provided with an array, named 'houses,' representing the
+coordinates of houses in the city, denoted as houses[i] = [xi, yi]. The required pipe to
+connect two houses, [xi, yi] and [xj, yj], is determined by the Manhattan distance
+between them: |xi - xj| + |yi - yj|, where |val| denotes the absolute value of val.
+Your objective is to calculate the minimum cost needed to connect all houses for an
+efficient water supply. All houses are considered connected if there exists exactly one
+simple path between any two houses.
+Assuming all distances are measured in kilometers, the cost for purchasing each kilometer of
+pipe is 1 taka.
+
+Input<br>
+
+The first input line contains one integer n, representing the number of houses. Following
+that, there are n lines describing the house positions. Each line consists of two integers,
+x and y, where x and y represent the two coordinates of the house position
+
+Output<br>
+
+Print the minimum cost of establishing such a pipeline.
+
+Example:<br>
+
+|Input|output|
+|--|--|
+5
+|0 0  |20|
+2 2
+3 10
+5 2
+<details>
+<summary>Solution</summary>
+    
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+class unionfined{
+int *parent;
+int *Rank;
+public:
+unionfined(int i){
+    parent=new int[i];
+    Rank=new int[i];
+    for(int j=0;j<i;j++){
+        parent[j]=j;
+        Rank[j]=0;
+    }
+    }
+    int Findparent(int i){
+if(parent[i]==i){
+    return i;
+}
+else return parent[i]=Findparent(parent[i]);
+}
+void unionset(int u,int v){
+u=Findparent(u);
+v=Findparent(v);
+if(Rank[u]<Rank[v]){
+    parent[u]=v;
+}
+else if(Rank[v]<Rank[u]) {
+    parent[v]=u;
+}
+else{
+    parent[v]=u;
+    Rank[u]++;
+}
+}
+
+};
+class mst{
+int minweight;
+int k;
+public:
+    mst(int i){
+        k=i;
+            }
+int getmst(vector<vector<int>>arr,int del,int take){
+    minweight=0;
+    unionfined x(k);
+    if(take!=-1){
+        x.unionset(arr[take][1],arr[take][2]);
+        minweight+=arr[take][0];
+    }
+for(int i=0;i<arr.size();i++){
+        if(i!=del){
+        int start=x.Findparent(arr[i][1]);
+        int finish=x.Findparent(arr[i][2]);
+     if(start!=finish){
+            minweight+=arr[i][0];
+        x.unionset(start,finish);
+     }
+}
+}
+for(int i=0;i<k;i++){
+    if(x.Findparent(i)!=x.Findparent(0)){
+        return INT_MAX;
+    }
+}
+return minweight;
+}
+};
+void check(int n){
+
+    vector<vector<int>>arr;
+for(int i=0;i<n;i++){
+    int x,y,z;
+    cin>>x>>y;
+    arr.push_back({x,y,i});
+}
+vector<vector<int>>arr2;
+for(int i=0;i<n;i++){
+    for(int j=0;j<n;j++){
+        if(j!=i){
+            int val=abs(arr[i][0]-arr[j][0])+abs(arr[i][1]-arr[j][1]);
+            arr2.push_back({val,i,j});
+        }
+    }
+}
+sort(arr2.begin(),arr2.end());
+
+    mst a(n);
+int weight=a.getmst(arr2,-1,-1);
+cout<<weight<<endl;
+}
+int main(){
+ int n;
+ cin>>n;
+ check(n);
+
+}
+```
+</details>
+     </details>
+
 # Single Source Shortest Path
 
 # Problems
