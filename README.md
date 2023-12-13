@@ -627,7 +627,24 @@ int main(){
      </details>
 
 # Single Source Shortest Path
+<details>
+<summary>Problem</summary>
+    
+# Problem1
+>1)I am going to my home. There are many cities and many bi-directional roads between them. The cities are numbered from 0 to n-1 and each road has a cost. There are m roads.
+You are given the number of my city t where I belong.
+Now from each city you have to find the minimum cost to go to my city. The cost is defined by the cost of the maximum road you have used to go to my city.
 
-# Problems
+Original Link:https://lightoj.com/problem/country-roads
+<details>
+<summary>Solution</summary>
 
 
+
+</details>
+</details>
+
+# All Pair Shortest Path
+<details>
+    <summary>Problem</summary>
+</details>
