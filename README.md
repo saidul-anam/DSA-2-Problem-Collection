@@ -759,6 +759,76 @@ while(n--){
   ```
 </details>
 
+# Problem3
+>3)Dhaka city is getting crowded and noisy everyday. Certain roads always remain blocked for congestion. In order to convince people avoid shortest routes as it's the number one reason for roads crowded; the city authority has come up with a new plan.
+Each junction of the city is marked with a positive integer (≤ 20) denoting the busy-ness of the junction. Whenever someone goes from one junction (the source junction) to another (the destination junction), the city authority gets an amount of money (busy-ness of destination - busy-ness of source)3 (that means the cube of the difference) from the traveler.
+Now, the authority has appointed you to find the minimum total amount that can be earned when someone goes from a certain junction (the zero point) to several others.
+
+Original source:https://lightoj.com/problem/extended-traffic
+<details>
+<summary>Solution</summary>
+    
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+void dijkstra(vector<pair<int,int>>*graph,int num,int source,int dest){
+vector<int>visited(num,0);
+priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>Q;
+vector<int>dist(num,INT_MAX);
+ Q.push({0,source});
+ dist[source]=0;
+ while(!Q.empty()){
+int u=Q.top().second;
+Q.pop();
+    for(auto a:graph[u]){
+            if(dist[a.second]>a.first+dist[u]){
+                dist[a.second]=a.first+dist[u];
+                Q.push({dist[a.second],a.second});
+    }
+}
+ }
+int x;
+cin>>x;
+for(int i=0;i<x;i++){
+    int y;
+    cin>>y;
+    if(dist[y]>=3)cout<<dist[y]<<endl;
+    else cout<<"?"<<endl;
+}
+}
+void solve(){
+int n,m;
+cin>>n;
+vector<int>arr(n+1);
+for(int i=1;i<=n;i++){
+    int x;
+    cin>>x;
+    arr[i]=x;
+}
+cin>>m;
+vector<pair<int,int>>graph[n+1];
+for(int i=0;i<m;i++){
+    int x,y,z;
+    cin>>x>>y;
+    z=(arr[y]-arr[x])*(arr[y]-arr[x])*(arr[y]-arr[x]);
+    graph[x].push_back({z,y});
+}
+dijkstra(graph,n+1,1,n);
+
+}
+int main(){
+int n;
+cin>>n;
+int i=1;
+while(n--){
+        cout<<"Case "<<i<<":"<<endl;
+     i++;
+    solve();
+}
+}
+```
+</details>
+
  </details>
 
 # All Pair Shortest Path
