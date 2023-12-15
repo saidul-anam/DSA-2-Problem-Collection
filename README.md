@@ -8,10 +8,9 @@
 
 
 # Minimum Spanning Tree
-
-
+# Problems
 <details>
-<summary>Problems</summary>
+<summary>See Here</summary>
 # Problem1
 
 >1) A Civil Engineer is given a task to connect n houses with the main electric power station directly or indirectly. The Govt has given him permission to connect exactly n wires to connect all of them. Each of the wires connects either two houses, or a house and the power station. The costs for connecting each of the wires are given.
@@ -703,6 +702,7 @@ int main(){
    </details>
 
 # All Pair Shortest Path
+# Problems
 <details>
-    <summary>Problem</summary>
+<summary>See Here</summary>
 </details>
