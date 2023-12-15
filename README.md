@@ -1,5 +1,7 @@
 # DSA-2-Problem-Collection
 
+>You will find some of the topic wise question to practice here.These question can be solved by others way/algorithm too.But i try to gather these problem with those particular topic to practice.All of my solution follows a general structure for that specific topic.It might give you some run time error in judge sometime.but you will have some idea where i made those change in algorithm.But i encourage to try by yourself first.Thank you and happy coding.
+
 # Contents
 
 ## [Minimum Spanning Tree](#Problems)
