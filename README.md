@@ -2,8 +2,8 @@
 
 # Contents
 
-## [Minimum Spanning Tree](#Problems)
-## [Single Source Shortest Path](#Problems)
+## [Minimum Spanning Tree]
+## [Single Source Shortest Path]
 ## [All Pair Shortest Path](#Problems)
 
 
