@@ -638,7 +638,7 @@ Now from each city you have to find the minimum cost to go to my city. The cost 
 Original Link:https://lightoj.com/problem/country-roads
 <details>
 <summary>Solution</summary>
-
+    
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -698,9 +698,8 @@ int main(){
   }
 }
 ```
-
 </details>
-</details>
+   </details>
 
 # All Pair Shortest Path
 <details>
