@@ -700,6 +700,67 @@ int main(){
 }
 ```
 </details>
+
+# Problem2
+>2)Tanvir returned home from the contest and got angry after seeing his room dusty. Who likes to see a dusty room after a mind boggling programming contest? After checking a bit he found that there is no brush in him room. So, he called Atiq to get a brush. But as usual Atiq refused to come. So, Tanvir decided to go to Atiq's house.
+The city they live in is divided by some junctions. The junctions are connected by two way roads. They live in different junctions. And they can go to one junction to using the given roads only.
+Now you are given the map of the city and the distances of the roads. You have to find the minimum distance Tanvir has to travel to reach Atiq's house.
+
+Original link:https://lightoj.com/problem/brush-5
+<details>
+<summary>Solution</summary>
+    
+```cpp
+    #include<bits/stdc++.h>
+using namespace std;
+void dijkstra(vector<pair<int,int>>*graph,int num,int source,int dest){
+vector<int>visited(num,0);
+priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>Q;
+vector<int>dist(num,INT_MAX);
+ Q.push({0,source});
+ dist[source]=0;
+ while(!Q.empty()){
+int u=Q.top().second;
+Q.pop();
+    for(auto a:graph[u]){
+            if(dist[a.second]>a.first+dist[u]){
+                dist[a.second]=a.first+dist[u];
+                Q.push({dist[a.second],a.second});
+    }
+}
+ }
+
+if(dist[dest]!=INT_MAX)cout<<dist[dest]<<endl;
+else cout<<"Impossible"<<endl;
+}
+void solve(){
+int n,m;
+cin>>n>>m;
+vector<pair<int,int>>graph[n+1];
+for(int i=0;i<m;i++){
+    int x,y,z;
+    cin>>x>>y>>z;
+    graph[x].push_back({z,y});
+    graph[y].push_back({z,x});
+}
+dijkstra(graph,n+1,1,n);
+
+}
+int main(){
+int n;
+cin>>n;
+int i=1;
+while(n--){
+        cout<<"Case "<<i<<":";
+     i++;
+    solve();
+}
+}
+
+    ```
+</details>
+
+
    </details>
 
 # All Pair Shortest Path
