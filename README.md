@@ -756,12 +756,10 @@ while(n--){
     solve();
 }
 }
-
-    ```
+  ```
 </details>
 
-
-   </details>
+ </details>
 
 # All Pair Shortest Path
 # Problems
