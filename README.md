@@ -639,7 +639,65 @@ Original Link:https://lightoj.com/problem/country-roads
 <details>
 <summary>Solution</summary>
 
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+void dijkstra(vector<pair<int,int>>*graph,int num,int source){
+vector<int>visited(num,0);
+priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>Q;
+vector<int>dist(num,INT_MAX);
+ Q.push({0,source});
+ dist[source]=0;
+ while(!Q.empty()){
+int u=Q.top().second;
+Q.pop();
+    for(auto a:graph[u]){
+            if(a.first>=dist[u]){
+                     if(dist[a.second]>a.first){
+                dist[a.second]=a.first;
+                Q.push({dist[a.second],a.second});
+    }
+}
+else{
+     if(dist[a.second]>dist[u]){
+                dist[a.second]=dist[u];
+                Q.push({dist[a.second],a.second});
+    }
+}
+}
+ }
+ for(int i=0;i<num;i++){
+    if(dist[i]!=INT_MAX)cout<<dist[i]<<endl;
+    else cout<<"Impossible"<<endl;
+ }
+}
+void solve(){
+  int n,m;
+cin>>n>>m;
+vector<pair<int,int>>graph[n];
+for(int i=0;i<m;i++){
+    int x,y,z;
+    cin>>x>>y>>z;
+    graph[x].push_back({z,y});
+    graph[y].push_back({z,x});
+}
+int source;
+cin>>source;
+dijkstra(graph,n,source);
 
+
+}
+int main(){
+  int n;
+  cin>>n;
+  int i=1;
+  while (n--){
+        cout<<"Case "<<i<< ":"<<endl;
+        i++;
+    solve();
+  }
+}
+```
 
 </details>
 </details>
