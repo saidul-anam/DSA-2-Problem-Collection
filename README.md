@@ -11,6 +11,7 @@
 # Problems
 <details>
 <summary>See Here</summary>
+    
 # Problem 1
 
 >1) A Civil Engineer is given a task to connect n houses with the main electric power station directly or indirectly. The Govt has given him permission to connect exactly n wires to connect all of them. Each of the wires connects either two houses, or a house and the power station. The costs for connecting each of the wires are given.
@@ -263,7 +264,7 @@ int main(){
 ```
 </details>
 
-# Problem3
+# Problem 3
 >3)The government of a certain developing nation wants to improve transportation in one of its most inaccessible areas, in an attempt to attract investment. The region consists of several important locations that must have access to an airport.
 Of course, one option is to build an airport in each of these places, but it may turn out to be cheaper to build fewer airports and have roads link them to all of the other locations. Since these are long distance roads connecting major locations in the country (e.g. cities, large villages, industrial areas), all roads are two-way. Also, there may be more than one direct road possible between two areas. This is because there may be several ways to link two areas (e.g. one road tunnels through a mountain while the other goes around it etc.) with possibly differing costs.
 A location is considered to have access to an airport either if it contains an airport or if it is possible to travel by road to another location from there that has an airport.
@@ -361,7 +362,7 @@ int main(){
 ```
 </details>
             
-# Problem4
+# Problem 4
 >4)Given a set of houses, each with the option of having an independent gas supply incurring a
 cost 'gas_supply[i]' or connecting to other houses through bidirectional pipelines with associated
 costs 'pipelines[i] = [house1, house2, cost]'. The objective is to minimize the total cost of
@@ -488,7 +489,7 @@ int main(){
 ```
 </details>
 
-# Problem5
+# Problem 5
 
 >5)Your job is to establish an efficient water supply network for every residence within a
 city. Let us conceptualize this city as a 2D plane, where each house is positioned using
@@ -501,7 +502,7 @@ efficient water supply. All houses are considered connected if there exists exac
 simple path between any two houses.
 Assuming all distances are measured in kilometers, the cost for purchasing each kilometer of
 pipe is 1 taka.
-
+  
 Input<br>
 
 The first input line contains one integer n, representing the number of houses. Following
@@ -631,7 +632,7 @@ int main(){
 <details>
 <summary>See Here</summary>
     
-# Problem1
+# Problem 1
 >1)I am going to my home. There are many cities and many bi-directional roads between them. The cities are numbered from 0 to n-1 and each road has a cost. There are m roads.
 You are given the number of my city t where I belong.
 Now from each city you have to find the minimum cost to go to my city. The cost is defined by the cost of the maximum road you have used to go to my city.
@@ -701,7 +702,7 @@ int main(){
 ```
 </details>
 
-# Problem2
+# Problem 2
 >2)Tanvir returned home from the contest and got angry after seeing his room dusty. Who likes to see a dusty room after a mind boggling programming contest? After checking a bit he found that there is no brush in him room. So, he called Atiq to get a brush. But as usual Atiq refused to come. So, Tanvir decided to go to Atiq's house.
 The city they live in is divided by some junctions. The junctions are connected by two way roads. They live in different junctions. And they can go to one junction to using the given roads only.
 Now you are given the map of the city and the distances of the roads. You have to find the minimum distance Tanvir has to travel to reach Atiq's house.
@@ -759,7 +760,7 @@ while(n--){
   ```
 </details>
 
-# Problem3
+# Problem 3
 >3)Dhaka city is getting crowded and noisy everyday. Certain roads always remain blocked for congestion. In order to convince people avoid shortest routes as it's the number one reason for roads crowded; the city authority has come up with a new plan.
 Each junction of the city is marked with a positive integer (≤ 20) denoting the busy-ness of the junction. Whenever someone goes from one junction (the source junction) to another (the destination junction), the city authority gets an amount of money (busy-ness of destination - busy-ness of source)3 (that means the cube of the difference) from the traveler.
 Now, the authority has appointed you to find the minimum total amount that can be earned when someone goes from a certain junction (the zero point) to several others.
