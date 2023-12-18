@@ -832,7 +832,91 @@ while(n--){
 ```
 </details>
 
- </details>
+# Problem 4
+>4)In your country there are 𝑁 cities numbered from 1 to 𝑁. You live in city 1. You want to go to city 𝑁.
+There are 𝑀 bidirectional roads connecting some cities to each other. It is possible to get to any city from
+any other city. But each city has a predefined amount of tax that you have to pay if you enter into that city.
+How can you get to city 𝑁 paying the least tax?
+
+Input:<br>
+The first line of input contains two integers 𝑁 and 𝑀 – denoting the number of cities and the number of
+roads respectively.
+The next line contains 𝑁 positive integer values – the tax you need to pay to enter into each city.
+The next 𝑀 lines contain two integers 𝑢, 𝑣 (1 ≤ 𝑢, 𝑣 ≤ 𝑁) – denoting that there is a road between city 𝑢
+and city v.
+
+Output<br>
+Print one integer – the least amount of tax you need to pay to get to city 𝑁.
+
+Example 1:<br>
+|Input|output|
+|--|--|
+3 2
+|5 10 15|25|
+1 2
+2 3
+
+Example 2:<br>
+|Input|output|
+|--|--|
+6 9
+|5 5 15 10 10 7|22|
+1 2
+2 3
+3 5
+5 4
+4 1
+2 4
+2 5
+5 6
+3 6
+<details>
+<summary>See Here</summary>
+    
+```cpp
+    
+#include<bits/stdc++.h>
+using namespace std;
+void dijkstra(vector<pair<int,int>>*graph,int num){
+vector<int>visited(num,0);
+priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>Q;
+vector<int>dist(num,INT_MAX);
+ Q.push({0,1});
+ dist[1]=0;
+ while(!Q.empty()){
+int u=Q.top().second;
+Q.pop();
+    for(auto a:graph[u]){
+            if(dist[a.second]>a.first+dist[u]){
+                dist[a.second]=a.first+dist[u];
+                Q.push({dist[a.second],a.second});
+    }
+}
+ }
+ cout<<dist[num-1]<<endl;
+}
+int main(){
+    int n,m;
+cin>>n>>m;
+vector<int>cost(n+1);
+for(int i=1;i<=n;i++){
+    int x;
+    cin>>x;
+    cost[i]=x;
+}
+vector<pair<int,int>>graph[n+1];
+for(int i=0;i<m;i++){
+    int x,y;
+    cin>>x>>y;
+    graph[x].push_back({cost[y],y});
+    graph[y].push_back({cost[x],x});
+}
+dijkstra(graph,n+1);
+}
+
+```
+    
+</details>
 
 # All Pair Shortest Path
 # Problems
