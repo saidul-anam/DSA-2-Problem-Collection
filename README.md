@@ -871,7 +871,7 @@ Example 2:<br>
 5  6
 3  6
 <details>
-<summary>See Here</summary>
+<summary>Solution</summary>
     
 ```cpp
     
