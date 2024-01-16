@@ -931,7 +931,6 @@ dijkstra(graph,n+1);
 # Problems
 <details>
 <summary>See Here</summary>
-</details>
 
 # Problem 1
 >1)On the Internet, machines (nodes) are richly interconnected, and many paths may exist between a given pair of nodes. The total message-carrying capacity (bandwidth) between two given nodes is the maximal amount of data per unit time that can be transmitted from one node to the other. Using a technique called packet switching; this data can be transmitted along several paths at the same time.
@@ -1023,3 +1022,4 @@ k++;}
 
 ```
 <\details>
+</details>
