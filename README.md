@@ -7,7 +7,7 @@
 ## [Minimum Spanning Tree](#Problems)
 ## [Single Source Shortest Path](#Problems)
 ## [All Pair Shortest Path](#Problems)
-
+## [Max Flow](#Problems)
 
 # Minimum Spanning Tree
 # Problems
@@ -924,3 +924,10 @@ dijkstra(graph,n+1);
 <details>
 <summary>See Here</summary>
 </details>
+
+# Max Flow
+# Problems
+<details>
+<summary>See Here</summary>
+</details>
+
