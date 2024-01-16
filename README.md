@@ -925,9 +925,101 @@ dijkstra(graph,n+1);
 <summary>See Here</summary>
 </details>
 
+
+
 # Max Flow
 # Problems
 <details>
 <summary>See Here</summary>
 </details>
 
+# Problem 1
+>1)On the Internet, machines (nodes) are richly interconnected, and many paths may exist between a given pair of nodes. The total message-carrying capacity (bandwidth) between two given nodes is the maximal amount of data per unit time that can be transmitted from one node to the other. Using a technique called packet switching; this data can be transmitted along several paths at the same time.
+For example, the figure shows a network with four nodes (shown as circles), with a total of five connections among them. Every connection is labeled with a bandwidth that represents its data-carrying capacity per unit time.
+In our example, the bandwidth between node 1 and node 4 is 25, which might be thought of as the sum of the bandwidths 10 along the path 1-2-4, 10 along the path 1-3-4, and 5 along the path 1-2-3-4. No other combination of paths between nodes 1 and 4 provides a larger bandwidth.
+You must write a program that computes the bandwidth between two given nodes in a network, given the individual bandwidths of all the connections in the network. In this problem, assume that the bandwidth of a connection is always the same in both directions (which is not necessarily true in the real world).
+
+Original source:https://lightoj.com/problem/internet-bandwidth
+<details>
+<summary>Solution</summary>
+    
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+#define N 10000
+int resgraph[N][N];
+int graph[N][N];
+bool bfs(int s,int t,int n,int parent[N]){
+bool vis[n];
+memset(vis,0,sizeof(vis));
+queue<int>q;
+q.push(s);
+vis[s]=true;
+parent[s]=-1;
+while(!q.empty()){
+    int u=q.front();
+    q.pop();
+    for(int i=0;i<n;i++){
+        if(vis[i]==0&&resgraph[u][i]>0){
+                if(i==t){
+                    parent[i]=u;
+                    return true;
+                }
+        q.push(i);
+        vis[i]=1;
+        parent[i]=u;
+        }
+    }
+}
+return false;
+}
+int ford_fulkerson(int n,int s,int t){
+int parent[n];
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+    resgraph[i][j]=graph[i][j];
+}
+}
+int flow=0;
+while(bfs(s,t,n,parent)){
+    int low=INT_MAX;
+    for(int i=t;i!=s;i=parent[i]){
+        int u=parent[i];
+        low=min(low,resgraph[u][i]);
+    }
+     for(int i=t;i!=s;i=parent[i]){
+        int u=parent[i];
+        resgraph[u][i]-=low;
+        resgraph[i][u]+=low;
+    }
+    flow+=low;
+}
+return flow;
+}
+
+int main(){
+    int li;
+    cin>>li;
+    int k=1;
+    while(li--){
+int n,m;
+cin>>n;
+int s,t;
+cin>>s>>t>>m;
+for(int i=0;i<=n;i++){
+    for(int j=0;j<=n;j++){
+        graph[i][j]=0;
+    }
+}
+for(int i=0;i<m;i++){
+    int x,y,z;
+    cin>>x>>y>>z;
+    graph[x][y]+=z;
+    graph[y][x]+=z;
+}
+cout<<"Case "<<k<<": "<<ford_fulkerson(n+1,s,t)<<endl;
+k++;}
+}
+
+```
+<\details>
